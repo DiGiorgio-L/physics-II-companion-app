@@ -11,3 +11,17 @@ The program allows users to construct and visualize systems involving **electric
 Users can create and load simulation scenes, define parameters for predefined physical models, and observe results through **2D or 3D visualizations** that display vectors, electric fields, and other relevant physical quantities. The goal of the project is not only to compute results but also to provide intuitive visual tools that make abstract concepts easier to explore and understand.
 
 The application is initially being developed for **Windows using C++**, with the possibility of supporting additional platforms in the future.
+
+## Architecture
+
+The project is divided into for subsystems:
+
+1. **Core:** this is the **scientific computation layer** of the program. It performs all mathematical and physical calculations used by the simulations.
+
+2. **Simulation:** this manages the **state and behavior of the simulated world**.
+
+3. **Graphics and UI:** combines rendering and user interaction.
+
+4. **Application infraestructure:** includes all **support and system-level components** needed for the application to function.
+
+Each of these subsystems will be described in more detail and further divided later.
