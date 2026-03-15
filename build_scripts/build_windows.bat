@@ -3,7 +3,7 @@ setlocal EnableDelayedExpansion
 
 set "files="
 set "output=../bin/debug/main.exe"
-set "options=-std=c++23 -Wall -Wcast-align -Wconversion -Wdouble-promotion -Werror -Wextra -Wformat=2 -Wnull-dereference -Wpedantic -Wshadow -O0 -g"
+set "options=-std=c++23 -Wall -Wcast-align -Wconversion -Wdouble-promotion -Werror -Wextra -Wformat=2 -Wnull-dereference -Wpedantic -Wno-unused-parameter -Wshadow -O0 -g"
 set "includes="
 set "flags=-D WIN32"
 
