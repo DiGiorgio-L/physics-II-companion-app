@@ -1,0 +1,6 @@
+#ifndef WIN32_PLATFORM_LAYER_H
+#define WIN32_PLATFORM_LAYER_H
+
+
+
+#endif
