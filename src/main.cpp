@@ -1,10 +1,13 @@
 #include <iostream>
 
 #if defined WIN32
+
+#include <windows.h>
 /* Windows entry point (WinMain) */
-int main(int argc, char **argv)
+int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
+		    PWSTR pCmdLine, int nCmdShow)
 {
-  std::cout << "Hello Win32!" << std::endl;
+  
   return 0;
 }
 
