@@ -4,7 +4,7 @@ setlocal EnableDelayedExpansion
 set "files="
 set "output=../bin/debug/main.exe"
 set "options=-std=c++23 -Wall -Wcast-align -Wconversion -Wdouble-promotion -Werror -Wextra -Wformat=2 -Wnull-dereference -Wpedantic -Wno-unused-parameter -Wshadow -O0 -g"
-set "includes="
+set "includes=-l kernel32"
 set "flags=-D WIN32"
 
 rem Change directory to src dir
