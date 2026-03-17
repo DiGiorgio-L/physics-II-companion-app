@@ -1,6 +1,6 @@
 # Physics II Companion App
 
-An app built to assist college students in the proccess of taking the Physics II course by providing an evironment for making simulations of various kinds.
+An app built to assist college students in the proccess of taking the Physics II course by providing an environment for making simulations of various kinds.
 
 ## Overview
 
