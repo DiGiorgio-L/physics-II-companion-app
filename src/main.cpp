@@ -13,9 +13,12 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
   /* DEBUGGING CONSOLE */
   win32_alloc_debug_console();
   
-  win32_create_window();
-
-
+  win32_create_window(hInstance);
+  
+  for(;;)
+  {
+    /* Test infinite loop */
+  }
   
   return 0;
 }
