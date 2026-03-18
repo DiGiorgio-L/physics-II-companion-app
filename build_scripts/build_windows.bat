@@ -4,7 +4,7 @@ setlocal EnableDelayedExpansion
 set "files="
 set "output=../bin/debug/main.exe"
 set "options=-std=c++23 -Wall -Wcast-align -Wconversion -Wdouble-promotion -Werror -Wextra -Wformat=2 -Wnull-dereference -Wpedantic -Wno-unused-parameter -Wshadow -O0 -g"
-set "includes=-l kernel32"
+set "includes=-l kernel32 -l user32"
 set "flags=-D WIN32"
 
 rem Change directory to src dir
@@ -19,7 +19,7 @@ rem Debugging echoes
 echo Files: %files%
 echo Output: %output%
 
-clang++ %options% %flags% %files% --output=%output%
+clang++ %options% %flags% %files% %includes% --output=%output%
 
 rem Return to original dir
 popd
