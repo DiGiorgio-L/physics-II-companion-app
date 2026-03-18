@@ -10,6 +10,9 @@
 int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 		    PWSTR pCmdLine, int nCmdShow)
 {
+  /* Temporary functions. They are meant to be contained inside a struct */
+  HWND window_handle {};
+
   /* DEBUGGING CONSOLE */
   win32_alloc_debug_console();
   

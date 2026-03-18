@@ -27,7 +27,7 @@ void win32_alloc_debug_console()
   return;
 }
 
-void win32_create_window(HINSTANCE hinstance)
+HWND win32_create_window(HINSTANCE hinstance)
 {
   /* Window class */
   const wchar_t *class_name = L"main_window_class";
@@ -61,8 +61,7 @@ void win32_create_window(HINSTANCE hinstance)
 				     NULL);
   assert((window_handle != NULL) && "Could not create window!");
   
-  
-  return;
+  return window_handle;
 }
 
 /* Window procedure */
