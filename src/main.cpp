@@ -10,19 +10,27 @@
 int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 		    PWSTR pCmdLine, int nCmdShow)
 {
-  /* Temporary functions. They are meant to be contained inside a struct */
-  HWND window_handle {};
-
   /* DEBUGGING CONSOLE */
   win32_alloc_debug_console();
-  
-  win32_create_window(hInstance);
-  
-  for(;;)
+
+  HWND window_handle = win32_create_window(hInstance);
+
+  /* Basic message loop */
+  MSG message;
+  bool is_running = true;
+  while (is_running)
   {
-    /* Test infinite loop */
+    is_running = GetMessage(&message, window_handle, NULL, NULL);
+    
+    /* NOTE: don't know what to do with the return value of TranslateMessage().
+     * I will investigate further and see what I get. */
+    TranslateMessage(&message);
+    
+    /* According to the Microsoft documentation, the return value of the
+     * DispatchMessage() function can be ignored since it doesn't represent
+     * neither a state of success nor failure of the call. */
+    DispatchMessage(&message);
   }
-  
   return 0;
 }
 
