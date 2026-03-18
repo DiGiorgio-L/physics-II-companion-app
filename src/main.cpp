@@ -21,9 +21,6 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
   while (is_running)
   {
     is_running = GetMessage(&message, window_handle, NULL, NULL);
-    
-    /* NOTE: don't know what to do with the return value of TranslateMessage().
-     * I will investigate further and see what I get. */
     TranslateMessage(&message);
     
     /* According to the Microsoft documentation, the return value of the
