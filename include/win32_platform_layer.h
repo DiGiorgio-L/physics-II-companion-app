@@ -5,6 +5,10 @@
 #include <cstdint>
 
 void win32_alloc_debug_console();
-void win32_create_window();
+void win32_create_window(HINSTANCE hinstance);
+
+/* Window procedure */
+LRESULT CALLBACK win32_window_procedure(HWND window_handle, UINT message,
+					WPARAM wparam, LPARAM lparam);
 
 #endif

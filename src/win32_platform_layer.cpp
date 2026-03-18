@@ -1,9 +1,9 @@
-#include "../include/win32_platform_layer.h"
 #include <iostream>
 #include <cassert>
 #include <cstdio>
-
 #include <windows.h>
+
+#include "../include/win32_platform_layer.h"
 
 void win32_alloc_debug_console()
 {
@@ -27,11 +27,48 @@ void win32_alloc_debug_console()
   return;
 }
 
-void win32_create_window()
+void win32_create_window(HINSTANCE hinstance)
 {
-  //win_handle = CreateWindowW();
-  //HWND handle = 0;
+  /* Window class */
+  const wchar_t *class_name = L"main_window_class";
+  WNDCLASSEXW window_class =
+    {
+      sizeof(WNDCLASSEX),
+      CS_VREDRAW | CS_HREDRAW | CS_OWNDC,
+      win32_window_procedure,
+      0,
+      0,
+      hinstance,
+      NULL,
+      NULL,
+      NULL,
+      NULL,
+      class_name,
+      NULL
+    };
+  assert((RegisterClassExW(&window_class) != 0) && "Could not register window class");
+
+  HWND window_handle = CreateWindowW(class_name,
+				     L"Physics II Companion App",
+				     WS_OVERLAPPEDWINDOW | WS_VISIBLE,
+				     CW_USEDEFAULT,
+				     CW_USEDEFAULT,
+				     1280,
+				     720,
+				     NULL,
+				     NULL,
+				     hinstance,
+				     NULL);
+  assert((window_handle != NULL) && "Could not create window!");
+  
   
   return;
+}
+
+/* Window procedure */
+LRESULT CALLBACK win32_window_procedure(HWND window_handle, UINT message,
+					WPARAM wparam, LPARAM lparam)
+{  
+  return DefWindowProcW(window_handle, message, wparam, lparam);
 }
 
