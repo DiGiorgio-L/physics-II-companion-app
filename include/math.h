@@ -3,7 +3,12 @@
 
 #include <cstdio>
 #include <cassert>
+#include <iomanip>
 
+/* Absolute value function */
 double m_abs(double x);
+
+/* Square of a number function */
+double m_sqr(double x);
 
 #endif
