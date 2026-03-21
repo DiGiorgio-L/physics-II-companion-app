@@ -18,6 +18,15 @@ double m_sqrt(double x)
    * version you can find in the MIT press book Structure and Interpretation of
    * Computer Programs. */
 
-  
-  return 0.0;
+  /* Can't take negative numbers as arguments */
+  if (x < 0) return 0.0;
+
+  double y = 1.0; /* This variable represents the initial guess */
+  double tolerance = 0.001; /* This is the tolerance to decide if the guess is precise enough */
+
+  while (!(m_abs(m_sqr(y) - x) < tolerance))
+  {
+    y = (y + (x / y)) / 2;
+  }
+  return y;
 }
