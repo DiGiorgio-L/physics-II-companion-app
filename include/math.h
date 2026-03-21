@@ -3,6 +3,7 @@
 
 #include <cstdio>
 #include <cassert>
+#include <iomanip>
 
 double m_abs(double x);
 
