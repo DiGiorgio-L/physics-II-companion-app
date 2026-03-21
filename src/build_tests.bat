@@ -1,0 +1,2 @@
+@echo off
+clang++ -std=c++23 -Wall -Wcast-align -Wconversion -Wdouble-promotion -Werror -Wextra -Wformat=2 -Wnull-dereference -Wpedantic -Wno-unused-parameter -Wshadow -O0 -g utils/math.cpp ../tests/tests.cpp -o ../bin/tests/tests.exe
