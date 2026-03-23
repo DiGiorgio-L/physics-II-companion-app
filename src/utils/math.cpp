@@ -30,3 +30,11 @@ double m_sqrt(double x)
   }
   return y;
 }
+
+/* Function that applies the Pythagora's theorem to find the hypotenuse given
+ * two catheti. */
+double m_hypotenuse(double a, double b)
+{
+  double hypotenuse = m_sqrt((m_sqr(a) + m_sqr(b)));
+  return hypotenuse;
+}

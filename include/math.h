@@ -14,4 +14,7 @@ double m_sqr(double x);
 /* Square root of a number function */
 double m_sqrt(double x);
 
+/* Pythagora's theorem function; specifically: find the hypotenuse */
+double m_hypotenuse(double a, double b);
+
 #endif
