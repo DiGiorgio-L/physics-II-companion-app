@@ -12,6 +12,7 @@ int main()
     std::cout << "1. m_abs(x): absolute value of a number" << std::endl;
     std::cout << "2. m_sqr(x): square of a number" << std::endl;
     std::cout << "3. m_sqrt(x): square root of a number " << std::endl;
+    std::cout << "4. m_hypotenuse(a, b): hypotenuse given two catheti " << std::endl;
     std::cout << "> ";
     std::cin >> option;
 
@@ -35,12 +36,23 @@ int main()
       std::cout << "Fixed: " << std::fixed << number << std::endl;
       std::cout << "Scientific: " << std::scientific << number << std::endl;
     }
-        else if (option == 3)
+    else if (option == 3)
     {
       double number = 0.0;
       std::cout << "Introduce a number: ";
       std::cin >> number;
       number = m_sqrt(number);
+      std::cout << "Normal: " << number << std::endl;
+      std::cout << "Fixed: " << std::fixed << number << std::endl;
+      std::cout << "Scientific: " << std::scientific << number << std::endl;
+    }
+    else if (option == 4)
+    {
+      double number = 0.0;
+      double a, b;
+      std::cout << "Introduce two numbers: ";
+      std::cin >> a >> b;
+      number = m_hypotenuse(a, b);
       std::cout << "Normal: " << number << std::endl;
       std::cout << "Fixed: " << std::fixed << number << std::endl;
       std::cout << "Scientific: " << std::scientific << number << std::endl;
